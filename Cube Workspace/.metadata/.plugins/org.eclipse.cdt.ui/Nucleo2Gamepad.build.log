@@ -1,0 +1,10 @@
+17:15:54 **** Incremental Build of configuration Debug for project Nucleo2Gamepad ****
+make -j16 all 
+arm-none-eabi-size  Nucleo2Gamepad.elf 
+   text	   data	    bss	    dec	    hex	filename
+  33020	    252	   4228	  37500	   927c	Nucleo2Gamepad.elf
+Finished building: default.size.stdout
+ 
+
+17:15:55 Build Finished. 0 errors, 0 warnings. (took 1s.82ms)
+
