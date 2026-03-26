@@ -98,7 +98,8 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USB_Device_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_GPIO_WritePin(GPIOA, Transistor_Command_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, Transistor_Command_Pin, GPIO_PIN_RESET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -109,29 +110,27 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 		if (event_detected){
-			HAL_Delay(20); // Anti-rebond basique
+			HAL_Delay(20);
 			for (int i = 2; i < 8; i++) keyboardReport[i] = (int) NULL;
 			uint8_t key_index = 2;
 			// Vérification indépendante de chaque touche
-			if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_6) == GPIO_PIN_RESET) {
+			if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_6) == GPIO_PIN_SET) {
 			  keyboardReport[key_index++] = KEY_UP;
 			}
-			if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_RESET) {
+			if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_7) == GPIO_PIN_SET) {
 			  keyboardReport[key_index++] = KEY_DOWN;
 			}
-			if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == GPIO_PIN_RESET) {
+			if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_0) == GPIO_PIN_SET) {
 			  keyboardReport[key_index++] = KEY_RIGHT;
 			}
-			if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4) == GPIO_PIN_RESET) {
+			if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_4) == GPIO_PIN_SET) {
 			  keyboardReport[key_index++] = KEY_LEFT;
 			}
-			USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboardReport, 8);
 			event_detected = 0;
-			if(keyboardReport[2]==(int)NULL){
-			  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_RESET);
-			}
-			HAL_Delay(5);
+			if (keyboardReport[2]==(int)NULL) HAL_GPIO_WritePin(LED_PROT_GPIO_Port, LED_PROT_Pin, GPIO_PIN_SET);
+			USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboardReport, 8);
 		}
+		HAL_Delay(5);
   }
   /* USER CODE END 3 */
 }
@@ -271,7 +270,7 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : BUTTON_Pin */
   GPIO_InitStruct.Pin = BUTTON_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(BUTTON_GPIO_Port, &GPIO_InitStruct);
 
@@ -291,11 +290,14 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-{
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
     if (GPIO_Pin == GPIO_PIN_6 || GPIO_Pin == GPIO_PIN_7 || GPIO_Pin == GPIO_PIN_0 || GPIO_Pin == GPIO_PIN_4){
         event_detected = 1;
-        HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(LED_PROT_GPIO_Port, LED_PROT_Pin, GPIO_PIN_RESET);
+    }
+    else if (GPIO_Pin == GPIO_PIN_9){
+		HAL_GPIO_TogglePin(LED_PROT_GPIO_Port, LED_PROT_Pin);
+		HAL_GPIO_TogglePin(Transistor_Command_GPIO_Port, Transistor_Command_Pin);
     }
 }
 /* USER CODE END 4 */

@@ -1,0 +1,17 @@
+08:43:56 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17180	    388	   3724	  21292	   532c	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 
+
+08:44:01 Build Finished. 0 errors, 0 warnings. (took 4s.528ms)
+

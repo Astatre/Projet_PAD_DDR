@@ -1,0 +1,215 @@
+08:59:43 **** Incremental Build of configuration Debug for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: STM2DDR-kbrd.elf section `.text' will not fit in region `FLASH'
+C:/ST/STM32CubeIDE_1.19.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/bin/ld.exe: region `FLASH' overflowed by 1584 bytes
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:68: STM2DDR-kbrd.elf] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+09:00:11 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16780	    388	   3716	  20884	   5194	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+09:06:17 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:114:21: error: 'event_detected' undeclared (first use in this function)
+  114 |                 if (event_detected){
+      |                     ^~~~~~~~~~~~~~
+../Core/Src/main.c:114:21: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:116:53: error: 'keyboardReport' undeclared (first use in this function)
+  116 |                         for (int i = 2; i < 8; i++) keyboardReport[i] = (int) NULL;
+      |                                                     ^~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:296:9: error: 'event_detected' undeclared (first use in this function)
+  296 |         event_detected = 1;
+      |         ^~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+09:06:41 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17140	    388	   3724	  21252	   5304	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 
+09:13:31 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17156	    388	   3724	  21268	   5314	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 
+09:20:29 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17164	    388	   3724	  21276	   531c	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 
+09:24:07 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17164	    388	   3724	  21276	   531c	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 
+09:25:12 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17164	    388	   3724	  21276	   531c	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+09:27:02 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17148	    388	   3724	  21260	   530c	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 
+09:31:07 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17148	    388	   3724	  21260	   530c	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 
+09:45:23 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:298:76: error: expected ';' before '}' token
+  298 |         HAL_GPIO_WritePin(LED_PROT_GPIO_Port, LED_PROT_Pin, GPIO_PIN_RESET)
+      |                                                                            ^
+      |                                                                            ;
+  299 |     }
+      |     ~                                                                       
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+09:45:46 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:298:77: error: 's' undeclared (first use in this function)
+  298 |         HAL_GPIO_WritePin(LED_PROT_GPIO_Port, LED_PROT_Pin, GPIO_PIN_RESET);s
+      |                                                                             ^
+../Core/Src/main.c:298:77: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:298:78: error: expected ';' before '}' token
+  298 |         HAL_GPIO_WritePin(LED_PROT_GPIO_Port, LED_PROT_Pin, GPIO_PIN_RESET);s
+      |                                                                              ^
+      |                                                                              ;
+  299 |     }
+      |     ~                                                                         
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+09:45:58 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17172	    388	   3724	  21284	   5324	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 
+09:48:03 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17128	    388	   3724	  21240	   52f8	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 
+11:31:30 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17128	    388	   3724	  21240	   52f8	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+11:32:47 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17180	    388	   3724	  21292	   532c	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 
+08:43:56 **** Incremental Build of configuration Release for project STM2DDR-kbrd ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32G431xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -I../USB_Device/App -I../USB_Device/Target -I../Middlewares/ST/STM32_USB_Device_Library/Core/Inc -I../Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "STM2DDR-kbrd.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\franc\OneDrive - ENSEA\S6\Proj\Projet_PAD_DDR\Cube Workspace\STM2DDR-kbrd\STM32G431K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="STM2DDR-kbrd.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: STM2DDR-kbrd.elf
+ 
+arm-none-eabi-size  STM2DDR-kbrd.elf 
+arm-none-eabi-objdump -h -S STM2DDR-kbrd.elf  > "STM2DDR-kbrd.list"
+   text	   data	    bss	    dec	    hex	filename
+  17180	    388	   3724	  21292	   532c	STM2DDR-kbrd.elf
+Finished building: default.size.stdout
+ 
+Finished building: STM2DDR-kbrd.list
+ 

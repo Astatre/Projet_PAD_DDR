@@ -116,12 +116,12 @@ int main(void)
 				// Sinon la touche est relachée : on vide le buffer
 				keyboardReport[2] = (int) NULL;
 			}
-		// Tant que l'état du bouton n'est pas re-modifié, le buffer ne peut pas changer
-		event_detected = 0;
+			// Tant que l'état du bouton n'est pas re-modifié, le buffer ne peut pas changer
+			event_detected = 0;
+		}
 		// On envoie en boucle le buffer : on a un appuie long si on maintient le bouton
 		USBD_CUSTOM_HID_SendReport(&hUsbDeviceFS, keyboardReport, 8);
 		HAL_Delay(10); // Court délai pour ne pas surcharger le canal
-		}
   }
   /* USER CODE END 3 */
 }
