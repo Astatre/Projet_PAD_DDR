@@ -8196,7 +8196,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "4k7"
+		(property "Value" "100K"
 			(at 0 -1.65 90)
 			(layer "B.Fab")
 			(uuid "f6218de2-383f-4949-a68e-d4905da0fe28")
@@ -8878,7 +8878,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "100k"
+		(property "Value" "4k7"
 			(at 0 -1.65 0)
 			(layer "B.Fab")
 			(uuid "f1e05062-e152-4461-b483-e922f6ec463b")
@@ -9170,7 +9170,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "4k7"
+		(property "Value" "100K"
 			(at 0 -1.65 90)
 			(layer "B.Fab")
 			(uuid "f895ee95-c555-47a7-9120-66c8ca2e4c81")
@@ -10902,7 +10902,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "4k7"
+		(property "Value" "100K"
 			(at 0 -1.65 90)
 			(layer "B.Fab")
 			(uuid "bdb0e191-6828-4839-86cc-6a86b3118109")
@@ -11748,7 +11748,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "4k7"
+		(property "Value" "100K"
 			(at 0 -1.65 90)
 			(layer "B.Fab")
 			(uuid "6dc29171-5a1c-4577-b6d5-7770626dedf5")
@@ -12751,6 +12751,58 @@
 			(justify left bottom)
 		)
 	)
+	(gr_text "Down"
+		(at 225.6 150.6 0)
+		(layer "F.SilkS")
+		(uuid "5d9798dd-be61-412e-8495-18bed2578fee")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.16)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "Right"
+		(at 219.8 134.2 0)
+		(layer "F.SilkS")
+		(uuid "6bd67ad1-c212-4b87-952b-0b8924a1b17d")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.16)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "UP"
+		(at 213.2 126.2 0)
+		(layer "F.SilkS")
+		(uuid "7da739d1-f5c1-49ab-9a7b-07a5ba199c4a")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.16)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
+	(gr_text "Left"
+		(at 194.4 143.2 0)
+		(layer "F.SilkS")
+		(uuid "92796cd6-c82e-4c4d-b713-c87072be5eca")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.16)
+				(bold yes)
+			)
+			(justify left bottom)
+		)
+	)
 	(gr_text "G/A"
 		(at 227 135.62 90)
 		(layer "F.SilkS")
@@ -12764,7 +12816,7 @@
 		)
 	)
 	(gr_text "G/A"
-		(at 224.3 144.56 0)
+		(at 224.3 144.8 0)
 		(layer "F.SilkS")
 		(uuid "9c35f51b-2e60-4e24-b23f-6084b25b33c7")
 		(effects
