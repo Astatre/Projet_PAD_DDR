@@ -1,0 +1,10 @@
+15:52:04 **** Incremental Build of configuration Release for project Nucleo2Keyboard ****
+make -j16 all 
+arm-none-eabi-size  Nucleo2Keyboard.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17352	    312	   4248	  21912	   5598	Nucleo2Keyboard.elf
+Finished building: default.size.stdout
+ 
+
+15:52:04 Build Finished. 0 errors, 0 warnings. (took 646ms)
+
